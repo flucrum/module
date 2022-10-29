@@ -20,5 +20,8 @@
   "bugs": {
     "url": "https://github.com/flucrum/module/issues"
   },
-  "homepage": "https://github.com/flucrum/module#readme"
+  "homepage": "https://github.com/flucrum/module#readme",
+  "dependencies": {
+    "ts": "^0.2.2"
+  }
 }
