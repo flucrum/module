@@ -1,0 +1,24 @@
+{
+  "name": "flucrum-module",
+  "version": "1.0.0",
+  "description": "Key architectural unit class for Flucrum framework, thats provide to define and configure module-singleton classes to build modular application",
+  "main": "index.js",
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/flucrum/module.git"
+  },
+  "keywords": [
+    "flucrum",
+    "framework",
+    "module"
+  ],
+  "author": "flucrum@gmail.com",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/flucrum/module/issues"
+  },
+  "homepage": "https://github.com/flucrum/module#readme"
+}
