@@ -4,7 +4,7 @@
   "description": "Key architectural unit class for Flucrum framework, thats provide to define and configure module-singleton classes to build modular application",
   "main": "index.js",
   "scripts": {
-    "test": "test"
+    "tsc": "tsc"
   },
   "repository": {
     "type": "git",
@@ -22,6 +22,7 @@
   },
   "homepage": "https://github.com/flucrum/module#readme",
   "dependencies": {
-    "ts": "^0.2.2"
+    "tsc": "^2.0.4",
+    "typescript": "^4.8.4"
   }
 }
