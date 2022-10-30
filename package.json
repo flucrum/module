@@ -4,7 +4,8 @@
   "description": "Key architectural unit class for Flucrum framework, thats provide to define and configure module-singleton classes to build modular application",
   "main": "index.js",
   "scripts": {
-    "tsc": "tsc"
+    "tsc": "tsc",
+    "lint": "eslint ./src"
   },
   "repository": {
     "type": "git",
@@ -22,7 +23,12 @@
   },
   "homepage": "https://github.com/flucrum/module#readme",
   "dependencies": {
-    "tsc": "^2.0.4",
-    "typescript": "^4.8.4"
+    "superstruct": "^0.16.6",
+    "typescript": "^4.8.4",
+    "yup": "^0.32.11"
+  },
+  "devDependencies": {
+    "eslint": "^8.26.0",
+    "eslint-config-google": "^0.14.0"
   }
 }

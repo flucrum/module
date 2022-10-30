@@ -3,7 +3,8 @@
         "module": "amd", 
         "outDir": "./js", 
         "sourceMap": true, 
-        "target": "es5",
-        "rootDir": "./ts"
+        "target": "ES2015",
+        "rootDir": "./ts",
+        "moduleResolution": "node"
     }
 }

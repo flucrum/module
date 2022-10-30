@@ -1,14 +1,17 @@
+import * as T from "superstruct";
 
-class Module<EventName extends string, Components extends {}, Params extends {}> {
-  public events: Record<EventName, (Object) => void>;
+const _ModuleManifest = T.object({
+  events: T.array(T.string()),
+  components: T.object(),
+  params: T.object(),
+});
 
-  constructor(
-    events: Record<EventName, (Object) => void>,
-    components: Components,
-    params: Params
-  ) {}
-}
-
-type ModuleConfig<M extends typeof Module> = {
-  events: Record<M["events"], (Object) => void>
+const ModuleYTypeFabric = function(moduleManifest: T.Infer<typeof _ModuleManifest>) 
+{
+	T.assert(moduleManifest, _ModuleManifest);
+	let eventsSchema = {};
+	moduleManifest.events.forEach((e) => {
+		eventsSchema[e] = T.func();
+	});
+	
 }
