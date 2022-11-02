@@ -1,18 +1,30 @@
 import * as T from "superstruct";
 
-const _ModuleManifest = T.object({
-  events: T.array(T.string()),
-  components: T.object(),
-  params: T.object(),
+const EventsManifest = T.array(T.string());
+
+const ComponentsManifest  = T.record(T.string(), T.instance(T.Struct));
+
+const ParamsManifest = T.record(T.string(), T.instance(T.Struct));
+
+const ModuleManifest = T.object({
+	events: EventsManifest,
+	components: ComponentsManifest,
+	params: ParamsManifest
 });
 
-const ModuleYTypeFabric = function(moduleManifest: T.Infer<typeof _ModuleManifest>) 
+/**
+ * Фабрика, создающая типы для модулей, с помощью конфига
+ * 
+ * @param {T.Infer<typeof _ModuleManifest>} moduleManifest [description]
+ * @returns {{}}
+ */
+const ModuleYTypeFabric = function(moduleManifest: T.Infer<typeof ModuleManifest>) 
 {
-	T.assert(moduleManifest, _ModuleManifest);
+	T.assert(moduleManifest, ModuleManifest);
 	let eventsSchema = {};
 	moduleManifest.events.forEach((e) => {
 		eventsSchema[e] = T.func();
 	});
 	
-	
+
 }
