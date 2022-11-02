@@ -18,13 +18,22 @@ const ModuleManifest = T.object({
  * @param {T.Infer<typeof _ModuleManifest>} moduleManifest [description]
  * @returns {{}}
  */
-const ModuleYTypeFabric = function(moduleManifest: T.Infer<typeof ModuleManifest>) 
-{
-	T.assert(moduleManifest, ModuleManifest);
+const ModuleYTypeFabric = function(
+	eventsManifest: T.Infer<typeof EventsManifest>,
+	componentsManifest: T.Infer<typeof ComponentsManifest>
+) {
+	T.assert(eventsManifest, EventsManifest);
+	T.assert(componentsManifest, ComponentsManifest);
+
 	let eventsSchema = {};
-	moduleManifest.events.forEach((e) => {
+	eventsManifest.forEach((e) => {
 		eventsSchema[e] = T.func();
 	});
-	
+
+	let componentsSchema = {};
+	componentsManifest as object;
+	Object.keys(componentsManifest).forEach(k => {
+		componentsSchema[k] = componentsManifest[k];
+	});
 
 }
